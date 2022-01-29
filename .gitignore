@@ -1,0 +1,10 @@
+Release/
+Debug/
+Doc/
+*.bin
+*.elf
+*.map
+~*
+nohup.out
+.~*
+.metadata/
