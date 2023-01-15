@@ -59,19 +59,13 @@ static void MX_TIM3_Init(void);
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 {
-  /* Prevent unused argument(s) compilation warning */
-  UNUSED(htim);
+  htim->Instance->CCR1++;
 
-  TIM3->CCR1++;
-
-  if (TIM3->CCR1 > (TIM3->ARR + 1))
+  if (htim->Instance->CCR1 > htim->Instance-> ARR)
   {
-	  TIM3->CCR1 = 0;
+	  htim->Instance->CCR1 = 0;
   }
-
-
 }
-
 
 
 /* USER CODE END 0 */
